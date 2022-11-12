@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.сontrollers.MainController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/jeans.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="24.0" layoutY="111.0" prefHeight="574.0" prefWidth="662.0" style="-fx-background-color: ffffff; -fx-background-radius: 20;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <children>
+            <ImageView fitHeight="376.0" fitWidth="432.0" layoutX="140.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="154.0">
+               <image>
+                  <Image url="@../images/minion.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="startTestButton" layoutX="381.0" layoutY="468.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="231.0" style="-fx-background-color: ffda68; -fx-background-radius: 10;" text="START" textFill="#3f6685">
+               <font>
+                  <Font name="Arial Black" size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="newWordsButton" layoutX="53.0" layoutY="468.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="231.0" style="-fx-background-color: ffda68; -fx-background-radius: 10;" text="ADD..." textFill="#3f6685">
+               <font>
+                  <Font name="Arial Black" size="36.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="150.0" fitWidth="650.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/hiletsgo.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

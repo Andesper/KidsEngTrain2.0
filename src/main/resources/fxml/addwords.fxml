@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: cdcdcf;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.сontrollers.AddWordController">
+   <children>
+      <AnchorPane layoutY="85.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: ffffff;">
+         <children>
+            <Button fx:id="addNewWordButton" layoutX="257.0" layoutY="221.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="187.0" text="Добавить слово">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <TextField fx:id="addEngWordField" layoutX="33.0" layoutY="106.0" prefHeight="51.0" prefWidth="297.0" promptText="Английский">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="addRusWordField" layoutX="367.0" layoutY="106.0" prefHeight="51.0" prefWidth="297.0" promptText="Перевод">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="29.0" layoutY="17.0" prefHeight="51.0" prefWidth="643.0" text="Добавте в словарь слово или фразу для тренировки" textFill="#656464" textOverrun="CLIP">
+               <font>
+                  <Font name="Arial" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="200.0" layoutY="19.0" prefHeight="51.0" prefWidth="297.0" text="Add new words to app" textFill="#eb0505" textOverrun="CLIP">
+         <font>
+            <Font name="Arial" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

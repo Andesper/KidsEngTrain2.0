@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class SuccessfulController {
 
@@ -19,7 +20,8 @@ public class SuccessfulController {
     @FXML
     void initialize() {
         successfulButton.setOnAction(event -> {
-            successfulButton.getScene().getWindow().hide();
+            Stage closableStage = (Stage) successfulButton.getScene().getWindow();
+            closableStage.close();
         });
     }
 

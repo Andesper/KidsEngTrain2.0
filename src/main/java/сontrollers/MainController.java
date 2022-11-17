@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -27,35 +28,40 @@ public class MainController {
     @FXML
     void initialize() {
         newWordsButton.setOnAction(actionEvent -> {
-            newWordsButton.getScene().getWindow().hide();
+            Stage closableStage = (Stage) newWordsButton.getScene().getWindow();
+            closableStage.close();
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/main/resources/fxml/addwords.fxml"));
+            Stage stage = new Stage();
+            Parent root = null;
             try {
-                Scene scene = new Scene(fxmlLoader.load(), 700, 400);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-                stage.setTitle("Add new words...");
-                stage.setResizable(false);
-                stage.showAndWait();
+                root = FXMLLoader.load(getClass().getResource("/main/resources/fxml/addwords.fxml"));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Add new words...");
+            stage.setResizable(false);
+            stage.show();
         });
-        startTestButton.setOnAction(actionEvent -> {
-            startTestButton.getScene().getWindow().hide();
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/main/resources/fxml/test.fxml"));
+        startTestButton.setOnAction(actionEvent -> {
+            Stage closableStage = (Stage) startTestButton.getScene().getWindow();
+            closableStage.close();
+
+            Stage stage = new Stage();
+            Parent root = null;
             try {
-                Scene scene = new Scene(fxmlLoader.load(), 700, 700);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-                stage.setTitle("Let's go!!!");
-                stage.setResizable(false);
-                stage.showAndWait();
+                root = FXMLLoader.load(getClass().getResource("/main/resources/fxml/test.fxml"));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Let's go!!!");
+            stage.setResizable(false);
+            stage.show();
+
         });
     }
 

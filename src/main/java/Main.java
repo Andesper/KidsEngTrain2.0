@@ -3,22 +3,11 @@ package main.java;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Collections;
 
 import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
-
-import main.java.Constants;
 
 public class Main extends Application {
 

@@ -2,6 +2,7 @@ package main.java.сontrollers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -90,7 +91,7 @@ public class TestController {
     }
 
     private void printQuestion(Question question, ArrayList sceneText) throws SQLException {
-        if(correctAnswerCount < 3) {
+        if(correctAnswerCount < 15) {
             question.getQuestions();
             sceneText.clear();
             sceneText.add(question.getCorrectAnswer());
@@ -107,21 +108,20 @@ public class TestController {
             answButtonFourth.setText((String) sceneText.get(3));
         }
         else {
-            correctAnswerCountLabel.getScene().getWindow().hide();
+            Stage closableStage = (Stage) correctAnswerCountLabel.getScene().getWindow();
+            closableStage.close();
 
-            //new Bananaplayer(Constants.SOUND_YES).playSound();
-
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/main/resources/fxml/congratulations.fxml"));
+            Stage stage = new Stage();
+            Parent root = null;
             try {
-                Scene scene = new Scene(fxmlLoader.load(), 700, 700);
-                Stage stage = new Stage();
-                stage.setTitle("Congratulations!!!");
-                stage.setScene(scene);
-                //stage.setResizable(false);
-                stage.showAndWait();
+                root = FXMLLoader.load(getClass().getResource("/main/resources/fxml/congratulations.fxml"));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            new Bananaplayer(Constants.SOUND_BANAN).playSound();
         }
     }
     private void answerVerification(String userAnswer, String correctAnswer) {
